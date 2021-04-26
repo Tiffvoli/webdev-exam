@@ -35,7 +35,7 @@
 <body>
 
   <form onsubmit="return false">
-    <input name="search_for" type="text" oninput="search()">
+    <input name="search_for" type="text"  oninput="search()" onfocus="show_results()" onblur="hide_results()">
     <div id="search_results">
       <div class="search_result">
         AAA

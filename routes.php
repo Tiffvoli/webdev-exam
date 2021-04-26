@@ -20,8 +20,8 @@ get('/signup', 'views/view_signup.php');
 // ##############################
 post('/deactive-account', 'views/deactivate_account.php');
 post('/login', 'bridges/bridge_login.php');
+post('/search', 'apis/api-search.php');
 post('/signup', 'bridges/bridge_signup.php');
-
 
 // ##############################
 // post('/users/update/:id', function($id){
