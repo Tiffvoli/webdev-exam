@@ -35,21 +35,9 @@
 <body>
 
   <form onsubmit="return false">
-    <<<<<<< HEAD <input name="search_for" type="text" oninput="search()" onfocus="show_results()" onblur="hide_results()">
-      <div id="search_results">
-        <div class="search_result">
-          AAA
-        </div>
-        <div class="search_result">
-          BBB
-        </div>
-      </div>
-      =======
-      <input name="search_for" type="text" oninput="search()" onfocus="show_results()" onblur="hide_results()">
-      <div id="search_results"></div>
-      >>>>>>> 9f1fb717250aab539cd3bf943858a5e035307829
+    <input name="search_for" type="text" oninput="search()" onfocus="show_results()" onblur="hide_results()">
+    <div id="search_results"></div>
   </form>
-
   <script>
     // People prof. exp. use this approach
     var search_timer // used to stop the search_timer
@@ -94,8 +82,6 @@
       document.querySelector("#search_results").style.display = "none"
     }
   </script>
-
-
 </body>
 
 </html>
