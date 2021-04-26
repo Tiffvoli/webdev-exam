@@ -59,6 +59,11 @@
             method: "POST",
             body: new FormData(document.querySelector("form"))
           })
+          if (!conn.ok) {
+            alert('uppps....')
+          }
+          let users = await conn.json()
+          console.log(users)
 
           show_results()
         }, 500)

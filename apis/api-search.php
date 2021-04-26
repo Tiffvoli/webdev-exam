@@ -29,6 +29,7 @@ try{
   $users = $q->fetchAll();
   // Cannot pass arrays or json to the front-end. You can "arrays" looking like "json" looking like string
   // echo $users; // associative array
+  header("Content-type:application/json");
   echo json_encode($users);
 }catch(PDOException $ex){
   echo $ex;
