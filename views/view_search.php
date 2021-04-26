@@ -57,10 +57,11 @@
           let users = await conn.json()
           console.log(users)
           // populate the results
+          document.querySelector("#search_results").innerHTML = ""
           users.forEach(user => {
             let user_div = `
           <div class="search_result">
-            ${user.user_name}
+            ${user.user_name} ${user.user_last_name}
           </div>`
             document.querySelector("#search_results").insertAdjacentHTML('beforeend', user_div)
           })
