@@ -1,5 +1,5 @@
 <?php
-
+            
 // Validate
 if( ! isset($_POST['search_for']) ){
   http_response_code(400);
@@ -20,8 +20,11 @@ try{
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   // full text search
-  $q = $db->prepare('SELECT * FROM users WHERE user_name = :user_name COLLATE NOCASE');
-  $q->bindValue(':user_name', $_POST['search_for']);
+  $q = $db->prepare(' SELECT user_name, user_last_name 
+                      FROM users 
+                      WHERE user_name LIKE :user_name 
+                      COLLATE NOCASE');
+  $q->bindValue(':user_name', '%'.trim($_POST['search_for']).'%');
   $q->execute();
   $users = $q->fetchAll();
   // Cannot pass arrays or json to the front-end. You can "arrays" looking like "json" looking like string

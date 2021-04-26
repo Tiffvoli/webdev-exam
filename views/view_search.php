@@ -35,7 +35,7 @@
 <body>
 
   <form onsubmit="return false">
-    <input name="search_for" type="text"  oninput="search()" onfocus="show_results()" onblur="hide_results()">
+    <input name="search_for" type="text" oninput="search()" onfocus="show_results()" onblur="hide_results()">
     <div id="search_results">
       <div class="search_result">
         AAA
@@ -54,8 +54,12 @@
         clearTimeout(search_timer)
       }
       if (event.target.value.length >= 2) {
-        search_timer = setTimeout(function() {
-          console.log("searching...")
+        search_timer = setTimeout(async function() {
+          let conn = await fetch('/search', {
+            method: "POST",
+            body: new FormData(document.querySelector("form"))
+          })
+
           show_results()
         }, 500)
       } else {
