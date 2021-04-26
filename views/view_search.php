@@ -35,15 +35,19 @@
 <body>
 
   <form onsubmit="return false">
-    <input name="search_for" type="text" oninput="search()" onfocus="show_results()" onblur="hide_results()">
-    <div id="search_results">
-      <div class="search_result">
-        AAA
+    <<<<<<< HEAD <input name="search_for" type="text" oninput="search()" onfocus="show_results()" onblur="hide_results()">
+      <div id="search_results">
+        <div class="search_result">
+          AAA
+        </div>
+        <div class="search_result">
+          BBB
+        </div>
       </div>
-      <div class="search_result">
-        BBB
-      </div>
-    </div>
+      =======
+      <input name="search_for" type="text" oninput="search()" onfocus="show_results()" onblur="hide_results()">
+      <div id="search_results"></div>
+      >>>>>>> 9f1fb717250aab539cd3bf943858a5e035307829
   </form>
 
   <script>
@@ -64,7 +68,14 @@
           }
           let users = await conn.json()
           console.log(users)
-
+          // populate the results
+          users.forEach(user => {
+            let user_div = `
+          <div class="search_result">
+            ${user.user_name}
+          </div>`
+            document.querySelector("#search_results").insertAdjacentHTML('beforeend', user_div)
+          })
           show_results()
         }, 500)
       } else {
