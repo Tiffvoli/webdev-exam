@@ -11,6 +11,8 @@ get('/users', 'views/view_users.php');
 get('/search', 'views/view_search.php');
 get('/signup', 'views/view_signup.php');
 
+// ##############################
+get('/users/$user_uuid', 'views/view_user.php');
 
 
 

@@ -20,7 +20,7 @@ try {
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   // full text search
-  $q = $db->prepare(' SELECT user_name, user_last_name 
+  $q = $db->prepare(' SELECT user_uuid, user_name, user_last_name 
                       FROM users 
                       WHERE user_name LIKE :user_name 
                       LIMIT 20
