@@ -1,0 +1,173 @@
+@import url("./_base.css");
+@import url("./_variables.css");
+@import url("./_form.css");
+
+/* TOP */
+header,
+nav {
+  background: transparent;
+}
+footer {
+  color: var(--blue);
+}
+.header {
+  color: var(--yellow);
+  font-size: 5rem;
+}
+
+.nav {
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 70%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+/* change this  */
+.nav a {
+  color: red;
+}
+nav ul,
+#homepage ul {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+}
+
+/* BOTTOM */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: right;
+}
+
+.users-title,
+.homepage {
+  margin-left: 2rem;
+}
+
+/* SECTIONS */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex {
+  display: flex;
+}
+.text-white {
+  color: white !important;
+}
+.text-blue {
+  color: var(--blue) !important;
+}
+.text-bold {
+  font-weight: bold;
+}
+#signup-page,
+#admin-page,
+#deactivate-page,
+#logout-page {
+}
+#form {
+  width: 100%;
+  max-width: 300px;
+}
+.herobanner {
+  width: 70%;
+}
+#login {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--blue);
+}
+#login-page {
+  background-color: var(--yellow);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+}
+
+/* ALL CHILDS IN SECTIONS */
+#login-page > *,
+#signup-page > *,
+/* #admin-page > *, */
+#deactivate-page > *,
+#logout-page > * {
+  align-self: center;
+}
+
+/* SIGN UP FORM */
+#name-group {
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* USERS PAGE */
+div#users {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 2rem;
+}
+
+section#users-page .user {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+/* ADMIN PAGE & DEACTIVATION PAGE & HOMEPAGE */
+
+.info-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  width: 30%;
+  height: 100vh;
+  padding: 4rem 3rem 1rem;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.info-container p {
+  margin: 1rem 0;
+}
+#deactivate-page > p,
+#homepage > p,
+#logout-page > p {
+  margin: 2rem 0;
+}
+#deactivate-page > p,
+#homepage > p,
+#logout-page > p {
+  font-size: 20px;
+}
+.feed {
+  width: 70%;
+}
+#homepage ul {
+  text-align: center;
+}
+
+#homepage ul li {
+  margin: 1rem 0;
+}
+
+#homepage > p {
+  margin: 2rem 0 2rem 2rem;
+}

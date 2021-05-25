@@ -1,38 +1,49 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'].'/router.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/router.php');
 
-// ##############################
-get('/', 'views/view_index.php');
-get('/admin', 'views/view_admin.php');
-get('/email', 'views/view_email.php');
-get('/login', 'views/view_login.php');
-get('/users', 'views/view_users.php');
-get('/search', 'views/view_search.php');
-get('/signup', 'views/view_signup.php');
+// ##################################################
+// ##################################################
 
-// ##############################
-get('/users/$user_uuid', 'views/view_user.php');
+// Get pages or views
+get('/home', '/index.php');
+
+// Login view
+get('/', '/views/log-in.php');
+
+// Logout view
+get('/logout', '/views/log-out.php');
+
+// Admin view
+get('/admin', '/views/admin.php');
+
+// Sign-up view
+get('/signup',  '/views/sign-up.php');
+
+// Users view
+get('/users', '/views/users.php');
 
 
+// ##################################################
+// ##################################################
+
+// Sending data for login
+post('/login',  '/bridges/bridge-login.php');
+
+// Log out
+post('/logout',  '/bridges/bridge-logout.php');
+
+// Sending data for sign up
+post('/signup',  '/bridges/bridge-signup.php');
+
+// Deactivate account
+post('/deactivate',  '/views/deactivate.php');
+
+// Create fake database
+post('/create-users', '/data/create-users.php'); // Step 1
+post('/seed-users', '/data/seed-users.php'); // Step 2
 
 
-// ##############################
-// ##############################
-// ##############################
-post('/deactive-account', 'views/deactivate_account.php');
-post('/login', 'bridges/bridge_login.php');
-post('/search', 'apis/api-search.php');
-post('/signup', 'bridges/bridge_signup.php');
-
-// ##############################
-// post('/users/update/:id', function($id){
-//   echo "Updating user with id: $id";
-// });
-
-post('/users/delete/$user_id', 'apis/api_delete_user.php');
-post('/db-create-users', 'db/db_create_users.php');
-post('/db-seed-users', 'db/db_seed_users.php');
-
-any('/404', 'views/view_404.php');
-
+// The 404.php which is inside the views folder will be called
+// The 404.php has access to $_GET and $_POST
+any('/404', '/views/404.php');
