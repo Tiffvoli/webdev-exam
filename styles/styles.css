@@ -171,3 +171,66 @@ section#users-page .user {
 #homepage > p {
   margin: 2rem 0 2rem 2rem;
 }
+/** BEGIN: Non Openmrs CSS **/
+
+:root {
+  --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+  --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+  --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+  --omrs-color-interaction: #1e4bd1;
+  --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+  --omrs-color-danger: #b50706;
+  --omrs-color-bg-low-contrast: #eff1f2;
+  --omrs-color-ink-high-contrast: #121212;
+  --omrs-color-bg-high-contrast: #ffffff;
+}
+/** END: Non Openmrs CSS **/
+div.omrs-input-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Input*/
+.omrs-input-filled > input {
+  border: 2px solid var(--blue);
+  border-radius: 2rem;
+}
+
+.omrs-input-underlined > input:focus,
+.omrs-input-filled > input:focus {
+  outline: none;
+}
+
+.omrs-input-underlined > .omrs-input-label,
+.omrs-input-filled > .omrs-input-label {
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  line-height: 147.6%;
+  color: var(--blue);
+  transition: top 0.2s;
+}
+
+.omrs-input-filled > input:hover {
+  border-color: white;
+}
+
+.omrs-input-filled > input:focus + .omrs-input-label,
+.omrs-input-filled > input:valid + .omrs-input-label {
+  top: 0.1rem;
+  /* font-size: 1rem; */
+  margin-bottom: 32px;
+  background-color: var(--yellow);
+}
+
+.omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
+  color: var(--omrs-color-interaction);
+}
+
+.omrs-input-filled:not(.omrs-input-danger) > input:focus {
+  border-color: var(--omrs-color-interaction);
+}
+
+.omrs-input-filled:not(.omrs-input-danger) > input:focus ~ svg {
+  fill: var(--omrs-color-ink-high-contrast);
+}
