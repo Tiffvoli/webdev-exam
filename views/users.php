@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php'); ?>
+require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php'); ?>
 
 <!-- Main part of the page -->
 <section id="users-page">
@@ -18,11 +18,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php'); ?>
                 unset($user['user_password']);
         ?>
 
-                <div class="user">
+                <div class="user flex-column">
                     <!-- <p>ID: </p> -->
-                    <h3><?= $user['user_name'] ?> <?= $user['user_lastname'] ?></h3>
+                    <h3 class="text-white"><?= $user['user_name'] ?> <?= $user['user_lastname'] ?></h3>
+                    <img class="placeholder" src="/../img/placeholder.png">
                     <p><b>Age:</b> <?= $user['user_age'] ?></p>
                     <p><b>Email:</b> <?= $user['user_email'] ?></p>
+                    <form method="POST" action="/deactivate">
+                        <button type="submit" class="btn btn-yellow-outline">Deactivate account</button>
+                    </form>
                 </div>
 
         <?php

@@ -45,3 +45,28 @@ input {
 .validate_error {
   background-color: red;
 }
+
+.radios {
+  display: flex;
+  padding-top: 1rem;
+}
+.radios input {
+  all: unset;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  width: 1rem;
+  height: 1rem;
+}
+.radios input:checked {
+  background-color: white;
+}
+.radios label {
+  margin: 0;
+  padding: 0 1rem 0 0.5rem;
+}
+.placeholder {
+  width: 30%;
+  border-radius: 50%;
+  align-self: center;
+  padding: 1rem 0;
+}

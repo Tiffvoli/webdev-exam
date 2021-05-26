@@ -20,7 +20,7 @@ try {
     $q->execute();
 
     if (!$q->rowCount()) {
-        header('Location: /admin');
+        header('Location: /user');
         exit();
     }
 
@@ -35,6 +35,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php');
     <h1 class="title">Deactivation</h1>
     <br />
     <p>Your account is now deactivated.</p>
-    <a href="/" class="btn">Back to home</a>
+    <a href="/admin" class="btn">Back to home</a>
 </section>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/components/bottom-footer.php'); ?>

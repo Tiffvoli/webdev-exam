@@ -16,6 +16,7 @@
             <h1>chipper.</h1>
             <ul>
                 <li><a href="/">Home</a></li>
+                <li><a href="/users">Users</a></li>
                 <li><a href="/signup">Sign up</a></li>
                 <li><a href="/">Log in</a></li>
             </ul>
