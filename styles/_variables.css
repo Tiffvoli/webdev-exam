@@ -60,6 +60,12 @@ footer {
   border: 2px solid white;
   color: white;
 }
+.btn-blue {
+  background-color: var(--blue) !important;
+  border: none;
+  color: white;
+  margin: 1rem 0;
+}
 a,
 button {
   text-decoration: none;

@@ -2,10 +2,11 @@
 
 session_start();
 
-if (!isset($_POST['update_password'])) {
+if (!isset($_SESSION['admin_uuid'])) {
     header('Location: /admin');
     exit();
 }
+
 
 try {
     $db_path = $_SERVER['DOCUMENT_ROOT'] . '/data/admin.db';
@@ -15,21 +16,17 @@ try {
     $q = $db->prepare(' UPDATE admin 
     SET admin_password = :admin_password
     WHERE admin_uuid = :admin_uuid ');
-    $q->bindValue(':admin_password', $_POST['update_password']);
+    $q->bindParam(':admin_password', $_POST['update_password']);
+    $q->bindParam(':admin_uuid', $_SESSION['admin_uuid']);
+
     $q->execute();
-    $user = $q->fetch();
-    // If user not found
-    if (!$user) {
-        // echo "user not found";
+
+    if (!$q->rowCount()) {
         header('Location: /admin');
         exit();
     }
-
-    if ($_SESSION['admin_uuid'] = $user['admin_uuid']) {
-        // print json_encode($user);
-        header('Location: /update');
-        exit();
-    }
+    header('Location: /admin/update');
+    exit();
 } catch (PDOException $ex) {
     echo $ex;
 }

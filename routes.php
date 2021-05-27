@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/router.php');
 // ##################################################
 
 // Get pages or views
-get('/home', '/index.php');
+get('/home', '/home-user.php');
 
 // Login view
 get('/', '/views/log-in.php');
@@ -30,8 +30,11 @@ get('/users', '/views/users.php');
 //Users settings view
 get('/settings', '/views/settings.php');
 
-//Update password
-get('/update',  '/update.php');
+//Update user info
+get('/user/update',  '/views/update.php');
+
+//Update admin password
+get('/admin/update',  '/views/update-admin.php');
 
 // ##################################################
 // ##################################################
@@ -50,7 +53,10 @@ post('/logout',  '/bridges/bridge-logout.php');
 post('/signup',  '/bridges/bridge-signup.php');
 
 //Update password
-post('/update-password',  '/views/update-password.php');
+post('/update-password',  '/bridges/bridge-update-password.php');
+
+//Update user info
+post('/update-info',  '/bridges/bridge-update-info.php');
 
 // Deactivate account
 post('/deactivate',  '/views/deactivate.php');

@@ -33,6 +33,9 @@ footer {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.text-left {
+  text-align: left !important;
+}
 /* change this  */
 .nav a {
   color: red;
@@ -63,6 +66,9 @@ footer {
 }
 .admin-title {
   padding: 2rem 0;
+}
+#admin-page button {
+  margin: 1rem 0 0;
 }
 
 /* SECTIONS */
@@ -192,6 +198,9 @@ section#users-page .user p {
   border-radius: 5%;
   margin: 1rem 0;
 }
+.profile-wrapper h3 {
+  padding-bottom: 1rem;
+}
 .profile-wrapper > div {
   max-width: 300px;
   margin: 0 auto;
@@ -210,7 +219,7 @@ section#users-page .user p {
 }
 /* Settings Page */
 .settings-wrapper {
-  max-width: 300px;
+  max-width: 500px;
   margin: 0 auto;
 }
 

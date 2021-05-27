@@ -38,15 +38,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php'); ?>
         <img src="/../img/avatar.jpg" class="placeholder-admin">
         <div class="btn btn-yellow"><a class="text-blue" href="/users">View all users</a></div>
         <button onclick="update_password()" class="btn btn-yellow">Update Password</button>
-        <form method="POST" action="/update-password" class="hide" id="update_password">
-            <div class="omrs-input-group">
-                <label class="omrs-input-filled" for="password">
-                    <input required name="update_password" id="password" type="password" maxlength="50" data-validate="str" data-min="2" data-max="50">
-                    <span class="omrs-input-label">New Password</span>
-                </label>
-            </div>
-            <button type="submit" class="btn btn-yellow-outline">Update Password</button>
+        <form method="POST" action="/update-password" class="hide text-left" id="update_password">
+            <label for="password">New password<input name="update_password" id="password" type="password" maxlength="50" data-validate="str" data-min="2" data-max="50"></label>
+            <button type="submit" class="btn">Update Password</button>
+
         </form>
+        <div class="btn btn-blue"><a href="/logout">Log out</a></div>
         <script>
             const update_pass = document.querySelector("#update_password");
 

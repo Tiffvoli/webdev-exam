@@ -1,7 +1,6 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
+
+session_start();
 
 if (!isset($_SESSION['user_uuid'])) {
     header('Location: /');
@@ -29,7 +28,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php'); ?>
 
 
 <section id="user-page" class="flex">
-
     <div class="feed">
         <div class="profile center-text">
             <h1 class="title">Welcome back, <?= $user['user_name'] ?>!</h1>
@@ -38,8 +36,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php'); ?>
                     <img class="placeholder" src="/../img/placeholder.png">
                     <h3 class="text-white"><?= $user['user_name'] ?> <?= $user['user_lastname'] ?></h3>
                     <p> <?= $user['user_email'] ?></p>
-                    <p class="text-bold">Age <span> <?= $user['user_age'] ?></span></p>
-                    <p class="text-bold"> Phone <span> <?= $user['user_phone'] ?></span></p>
+                    <p class="text-bold">Age: <span> <?= $user['user_age'] ?></span></p>
+                    <p class="text-bold"> Phone: <span> <?= $user['user_phone'] ?></span></p>
                 </div>
                 <div>
                     <div class="btn btn-yellow"><a href="/settings" class="text-blue">Settings</a></div>

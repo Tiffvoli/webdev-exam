@@ -17,7 +17,10 @@ label {
   font-size: var(--font-size-base);
   color: var(--blue);
 }
-
+.fieldset {
+  border: none;
+  justify-content: space-between;
+}
 input {
   all: unset;
   height: 2rem;
