@@ -12,8 +12,9 @@ try {
     user_uuid         TEXT UNIQUE,
     user_name         TEXT,
     user_lastname     TEXT,
-    user_age          INT,
     user_email        TEXT UNIQUE,
+    user_age          TEXT,
+    user_phone        TEXT,
     user_password     TEXT,
     user_stt          BOOLEAN,
     PRIMARY KEY(user_uuid)

@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
 }
 
 if (!isset($_SESSION['user_uuid'])) {
-    header('Location: /login');
+    header('Location: /');
     exit();
 }
 
@@ -18,7 +18,7 @@ try {
     $q->execute();
     $user = $q->fetch();
     if (!$user) {
-        header('Location: /login');
+        header('Location: /');
         exit();
     }
 } catch (PDOException $ex) {
@@ -37,15 +37,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php'); ?>
                 <div>
                     <img class="placeholder" src="/../img/placeholder.png">
                     <h3 class="text-white"><?= $user['user_name'] ?> <?= $user['user_lastname'] ?></h3>
-                    <!-- <p class="text-bold">Age:</p>
-                    <p><?= $user['user_age'] ?> </p>
-                    <p class="text-bold">Email:</p>
-                    <p> <?= $user['user_email'] ?></p> -->
+                    <p> <?= $user['user_email'] ?></p>
+                    <p class="text-bold">Age <span> <?= $user['user_age'] ?></span></p>
+                    <p class="text-bold"> Phone <span> <?= $user['user_phone'] ?></span></p>
                 </div>
                 <div>
-                    <div class="btn btn-yellow"><a href="/profile" class="text-blue">View profile</a></div>
-                    <div class="btn btn-white-outline"><a href="/logout">Log out </a></div>
-                    <form method="POST" action="/deactivate">
+                    <div class="btn btn-yellow"><a href="/settings" class="text-blue">Settings</a></div>
+                    <div class="btn btn-white-outline"><a href="/logout">Log out</a></div>
+                    <form method="POST" action="/delete">
                         <button type="submit" class="btn btn-yellow-outline">Delete account</button>
                     </form>
                 </div>

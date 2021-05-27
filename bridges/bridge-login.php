@@ -3,24 +3,24 @@
 session_start();
 
 if (!isset($_POST['email'])) {
-    header('Location: /login');
+    header('Location: /');
     exit();
 }
 
 if (!isset($_POST['password'])) {
-    header('Location: /login');
+    header('Location: /');
     exit();
 }
 
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    header('Location: /login');
+    header('Location: /');
     exit();
 }
 if (
     strlen($_POST['password']) < 2 ||
     strlen($_POST['password']) > 50
 ) {
-    header('Location: /login');
+    header('Location: /');
     exit();
 }
 
@@ -37,7 +37,7 @@ try {
     // If user not found
     if (!$user) {
         // echo "user not found";
-        header('Location: /login');
+        header('Location: /');
         exit();
     }
 

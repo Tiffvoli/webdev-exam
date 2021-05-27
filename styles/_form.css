@@ -70,3 +70,12 @@ input {
   align-self: center;
   padding: 1rem 0;
 }
+.placeholder-admin {
+  width: 10rem;
+  height: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  align-self: center;
+  padding: 1rem 0;
+}

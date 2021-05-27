@@ -27,6 +27,12 @@ get('/signup',  '/views/sign-up.php');
 get('/users', '/views/users.php');
 
 
+//Users settings view
+get('/settings', '/views/settings.php');
+
+//Update password
+get('/update',  '/update.php');
+
 // ##################################################
 // ##################################################
 
@@ -43,12 +49,22 @@ post('/logout',  '/bridges/bridge-logout.php');
 // Sending data for sign up
 post('/signup',  '/bridges/bridge-signup.php');
 
+//Update password
+post('/update-password',  '/views/update-password.php');
+
 // Deactivate account
 post('/deactivate',  '/views/deactivate.php');
 
-// Create fake database
+// Delete account
+post('/delete',  '/views/delete.php');
+
+// Create user database
 post('/create-users', '/data/create-users.php'); // Step 1
 post('/seed-users', '/data/seed-users.php'); // Step 2
+
+// Create admin database
+post('/create-admin', '/data/create-admin.php'); // Step 1
+post('/seed-admin', '/data/seed-admin.php'); // Step 2
 
 
 // The 404.php which is inside the views folder will be called

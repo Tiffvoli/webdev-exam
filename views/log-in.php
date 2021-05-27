@@ -33,7 +33,7 @@
              <div class="btn"><a class="text-blue" href="/signup">Sign up </a></div>
          </form>
          <!-- admin form -->
-         <form id="form" action="/admin" method="POST" onsubmit="return validate_admin()" class="admin_account hide">
+         <form id="form" action="/admin" method="POST" onsubmit="return validate()" class="admin_account hide">
              <div class="omrs-input-group">
                  <label class="omrs-input-filled" for="email">
                      <input required name="email_admin" id="admin_email" type="text" data-validate="email">

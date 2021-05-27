@@ -1,6 +1,16 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php'); ?>
 
+session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+if (!isset($_SESSION['admin_uuid'])) {
+    header('Location: /');
+    exit();
+}
+require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
+?>
 <!-- Main part of the page -->
 <section id="users-page">
     <h1 class="title users-title">List of users</h1>
@@ -24,6 +34,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php'); ?>
                     <img class="placeholder" src="/../img/placeholder.png">
                     <p><b>Age:</b> <?= $user['user_age'] ?></p>
                     <p><b>Email:</b> <?= $user['user_email'] ?></p>
+                    <p><b>Phone:</b> <?= $user['user_phone'] ?></p>
                     <form method="POST" action="/deactivate">
                         <button type="submit" class="btn btn-yellow-outline">Deactivate account</button>
                     </form>
