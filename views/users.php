@@ -21,7 +21,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
             $db = new PDO("sqlite:$db_path");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-            $q = $db->prepare('SELECT * FROM users ORDER BY user_age;');
+            $q = $db->prepare('SELECT * FROM users ORDER BY user_name;');
             $q->execute();
             $users = $q->fetchAll();
             foreach ($users as $user) {
@@ -29,15 +29,17 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
         ?>
 
                 <div class="user flex-column">
-                    <!-- <p>ID: </p> -->
                     <h3 class="text-white"><?= $user['user_name'] ?> <?= $user['user_lastname'] ?></h3>
                     <img class="placeholder" src="/../img/placeholder.png">
+                    <p><b>ID:</b> <?= $user['user_uuid'] ?></p>
                     <p><b>Age:</b> <?= $user['user_age'] ?></p>
                     <p><b>Email:</b> <?= $user['user_email'] ?></p>
                     <p><b>Phone:</b> <?= $user['user_phone'] ?></p>
-                    <form method="POST" action="/deactivate">
-                        <button type="submit" class="btn btn-yellow-outline">Deactivate account</button>
-                    </form>
+
+                    <button id="deactivate-btn" class="btn btn-yellow-outline" onclick="deactivate_user('<?= $user['user_uuid'] ?>')">
+                        Deactivate account
+                    </button>
+
                 </div>
 
         <?php
@@ -47,6 +49,21 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
         } ?>
     </div>
 </section>
+<script>
+    async function deactivate_user(user_id) {
+        let div_user = event.target.parentNode
+        let conn = await fetch(`/users/deactivate/${user_id}`, {
+            "method": "POST"
+        })
+        if (!conn.ok) {
+            alert("upps...");
+            return
+        }
+        let data = await conn.text()
+        console.log(data)
+        div_user.remove();
+    }
+</script>
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/bottom-footer.php');
 ?>

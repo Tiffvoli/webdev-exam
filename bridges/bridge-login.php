@@ -34,23 +34,37 @@ try {
     $q->bindValue(':email', $_POST['email']);
     $q->execute();
     $user = $q->fetch();
+
     // If user not found
+
     if (!$user) {
-        // echo "user not found";
         header('Location: /');
         exit();
     }
+    //if user is deactivated
+    // if ($user['user_stt'] == 0) {
+    //     header('Location: /');
+    //     exit();
+    // }
 
-    if ($_SESSION['user_uuid'] = $user['user_uuid']) {
-        // print json_encode($user);
-        header('Location: /user');
-        exit();
-    }
+    //check password
+    // if (($_POST['password'] == $user['user_password'])) {
+    //     header('Location: /user');
+    //     exit();
+    // } else {
+    //     header('Location: /');
+    //     exit();
+    // }
+
+    $_SESSION['user_uuid'] = $user['user_uuid'];
+    header('Location: /user');
+    exit();
 } catch (PDOException $ex) {
     echo $ex;
 }
 ?>
 <script>
     let console = <?= json_encode($user) ?>
-    console.log(console);
+    let console1 = <?= json_encode($user['user_password']) ?>
+    console.log(console1);
 </script>

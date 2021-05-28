@@ -5,8 +5,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/router.php');
 // ##################################################
 // ##################################################
 
-// Get pages or views
-get('/home', '/home-user.php');
 
 // Login view
 get('/', '/views/log-in.php');
@@ -23,9 +21,11 @@ get('/user', '/views/user.php');
 // Sign-up view
 get('/signup',  '/views/sign-up.php');
 
+//Sign up success
+get('/signup/success',  '/views/sign-up-success.php');
+
 // Users view
 get('/users', '/views/users.php');
-
 
 //Users settings view
 get('/settings', '/views/settings.php');
@@ -35,6 +35,15 @@ get('/user/update',  '/views/update.php');
 
 //Update admin password
 get('/admin/update',  '/views/update-admin.php');
+
+//Forget password
+get('/forget-password',  '/views/forget-password.php');
+get('/forget-password/success',  '/views/forget-password-success.php');
+
+//Email
+get('/email-deactivate', 'views/email-deactivate.php');
+get('/email-signup', 'views/email-signup.php');
+
 
 // ##################################################
 // ##################################################
@@ -58,8 +67,11 @@ post('/update-password',  '/bridges/bridge-update-password.php');
 //Update user info
 post('/update-info',  '/bridges/bridge-update-info.php');
 
+//Forget password
+post('/change-password',  '/bridges/bridge-change-password.php');
+
 // Deactivate account
-post('/deactivate',  '/views/deactivate.php');
+post('/users/deactivate/$user_id', '/apis/api_deactivate_user.php');
 
 // Delete account
 post('/delete',  '/views/delete.php');

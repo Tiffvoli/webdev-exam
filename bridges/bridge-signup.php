@@ -46,7 +46,7 @@ try {
         header('Location: /signup');
         exit();
     }
-    header('Location: /');
+    header('Location: /email-signup');
     exit();
 } catch (PDOException $ex) {
     echo $ex;

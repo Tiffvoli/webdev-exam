@@ -20,7 +20,7 @@ try {
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php');
 ?>
-<section id="deactivate-page">
+<section id="deactivate-page" class="center-text">
     <h1 class="title">Account deleted</h1>
     <br />
     <p>Your account is now deleted.</p>

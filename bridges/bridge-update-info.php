@@ -28,13 +28,6 @@ try {
     $q->bindParam(':user_phone', $_POST['update_phone']);
     $q->bindParam(':user_password', $_POST['update_password']);
     $q->bindParam(':user_uuid', $_SESSION['user_uuid']);
-    // $q->bindValue(':user_name', $_POST['update_name']);
-    // $q->bindValue(':user_lastname', $_POST['update_last_name']);
-    // $q->bindValue(':user_email', $_POST['update_email']);
-    // $q->bindValue(':user_age', $_POST['update_age']);
-    // $q->bindValue(':user_phone', $_POST['update_phone']);
-    // $q->bindValue(':user_password', $_POST['update_password']);
-
     $q->execute();
 
     if (!$q->rowCount()) {
