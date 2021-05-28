@@ -35,7 +35,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
                     <p><b>Age:</b> <?= $user['user_age'] ?></p>
                     <p><b>Email:</b> <?= $user['user_email'] ?></p>
                     <p><b>Phone:</b> <?= $user['user_phone'] ?></p>
-
+                    <?php if (!$user['user_stt'] == 1) {
+                        echo '<span>Blocked</span>';
+                    }
+                    ?>
                     <button id="deactivate-btn" class="btn btn-yellow-outline" onclick="deactivate_user('<?= $user['user_uuid'] ?>')">
                         Deactivate account
                     </button>

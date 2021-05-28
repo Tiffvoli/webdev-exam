@@ -1,1 +1,0 @@
-<h1>Forget password</h1>

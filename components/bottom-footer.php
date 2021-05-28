@@ -3,7 +3,6 @@
     </footer>
     <script src="/scripts/general.js"></script>
     <script src="/scripts/validator.js"></script>
-    <script src="/scripts/admin.js"></script>
     </body>
 
     </html>

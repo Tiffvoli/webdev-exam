@@ -37,12 +37,14 @@ get('/user/update',  '/views/update.php');
 get('/admin/update',  '/views/update-admin.php');
 
 //Forget password
-get('/forget-password',  '/views/forget-password.php');
-get('/forget-password/success',  '/views/forget-password-success.php');
+get('/reset-password',  '/views/reset-password.php');
+get('/reset-password/success',  '/views/forget-password-success.php');
+get('/forgot-password',  '/views/login-forgot-password.php');
 
 //Email
 get('/email-deactivate', 'views/email-deactivate.php');
 get('/email-signup', 'views/email-signup.php');
+get('/forgot', 'views/email-forgot-password.php');
 
 
 // ##################################################
@@ -69,6 +71,7 @@ post('/update-info',  '/bridges/bridge-update-info.php');
 
 //Forget password
 post('/change-password',  '/bridges/bridge-change-password.php');
+post('/login/change-password/', '/apis/api_reset_password.php');
 
 // Deactivate account
 post('/users/deactivate/$user_id', '/apis/api_deactivate_user.php');
