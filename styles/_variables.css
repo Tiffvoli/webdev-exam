@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 
 :root {
-  --blue: #00539cff;
+  --blue: #00539c;
   --yellow: #ffd662ff;
 }
 h1,
@@ -65,6 +65,20 @@ footer {
   border: none;
   color: white;
   margin: 1rem 0;
+}
+.btn-blue:hover {
+  color: var(--yellow) !important;
+}
+.btn-disable {
+  background-color: grey !important;
+  cursor: none;
+  color: black;
+  border: none;
+}
+.btn-back {
+  position: absolute;
+  top: 10%;
+  left: 10%;
 }
 a,
 button {

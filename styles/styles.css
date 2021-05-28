@@ -26,6 +26,13 @@ footer {
   display: flex;
   justify-content: space-evenly;
 }
+.nav-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--blue) !important;
+  text-align: center;
+}
 .center-text {
   position: absolute;
   top: 50%;
@@ -89,17 +96,27 @@ footer {
 .text-bold {
   font-weight: bold;
 }
-
+.text-red {
+  color: red !important;
+}
+.btn-disable {
+  background-color: lightgrey !important;
+  cursor: not-allowed;
+  color: grey;
+  border: none;
+}
 #admin-page,
 #user-page,
 #deactivate-page,
-#logout-page {
+#logout-page,
+#reset-page {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 500px;
+  margin: 0 auto;
 }
 #deactivate-page a {
   width: fit-content;

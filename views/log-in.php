@@ -29,7 +29,7 @@
                      <span class="omrs-input-label">Password</span>
                  </label>
              </div>
-             <a href="/forgot" class="text-blue">Forgot password?</a>
+             <a href="/forgot-password" class="text-blue">Forgot password?</a>
              <button type="submit">Log in</button>
              <div class="btn"><a class="text-blue" href="/signup">Sign up </a></div>
          </form>

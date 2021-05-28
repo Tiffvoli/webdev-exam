@@ -2,6 +2,10 @@
 
 session_start();
 
+if (!$_SESSION['user_uuid']) {;
+    header('Location: /');
+    exit();
+}
 if (!isset($_POST['email'])) {
     header('Location: /');
     exit();
@@ -30,7 +34,7 @@ try {
     $db = new PDO("sqlite:$db_path");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $q = $db->prepare(' SELECT * FROM users WHERE user_email = :email;');
+    $q = $db->prepare(' SELECT * FROM users WHERE user_email = :email LIMIT 1');
     $q->bindValue(':email', $_POST['email']);
     $q->execute();
     $user = $q->fetch();
@@ -42,12 +46,12 @@ try {
         exit();
     }
     //if user is deactivated
-    // if ($user['user_stt'] == 0) {
-    //     header('Location: /');
-    //     exit();
-    // }
+    if ($user['user_stt'] == 0) {
+        header('Location: /');
+        exit();
+    }
 
-    //check password
+    // check password
     // if (($_POST['password'] == $user['user_password'])) {
     //     header('Location: /user');
     //     exit();

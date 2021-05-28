@@ -17,18 +17,18 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = 2;                      //Enable verbose debug output
+    $mail->SMTPDebug = false;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'ngocwebdev@gmail.com';                     //SMTP username
+    $mail->Username   = 'chipperwebdev@gmail.com';                     //SMTP username
     $mail->Password   = $password;                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     //Recipients
-    $mail->setFrom('ngocwebdev@gmail.com', 'Web Class KEA');
-    $mail->addAddress('ngocwebdev@gmail.com', 'The user');     //Add a recipient
+    $mail->setFrom('chipperwebdev@gmail.com', 'Chipper');
+    $mail->addAddress('chipperwebdev@gmail.com', 'The user');     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -45,11 +45,20 @@ try {
     $mail->AltBody = 'Forgot password';
 
     $mail->send();
-    echo 'Message has been sent';
+    // echo 'Message has been sent';
 
-    //send user to home
-    header('Location: /forgot-password');
-    exit();
+    // //send user to home
+    // header('Location: /forgot-password');
+    // exit();
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php');
+?>
+<section id="deactivate-page" class="center-text">
+    <h1 class="title">Forgot Password?</h1>
+    <br />
+    <p>An email has been sent to your email with a link to reset your password.</p>
+    <a href="/" class="btn">Return home</a>
+</section>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/components/bottom-footer.php'); ?>

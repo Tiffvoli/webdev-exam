@@ -36,10 +36,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
                     <p><b>Email:</b> <?= $user['user_email'] ?></p>
                     <p><b>Phone:</b> <?= $user['user_phone'] ?></p>
                     <?php if (!$user['user_stt'] == 1) {
-                        echo '<span>Blocked</span>';
+                        echo '<div class="btn btn-disable">Blocked</div>';
                     }
                     ?>
-                    <button id="deactivate-btn" class="btn btn-yellow-outline" onclick="deactivate_user('<?= $user['user_uuid'] ?>')">
+                    <button id="deactivate-btn" class="btn btn-yellow-outline <?php if (!$user['user_stt'] == 1) {
+                                                                                    echo ' hide';
+                                                                                } ?>" onclick="deactivate_user('<?= $user['user_uuid'] ?>')">
                         Deactivate account
                     </button>
 

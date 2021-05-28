@@ -21,9 +21,6 @@ get('/user', '/views/user.php');
 // Sign-up view
 get('/signup',  '/views/sign-up.php');
 
-//Sign up success
-get('/signup/success',  '/views/sign-up-success.php');
-
 // Users view
 get('/users', '/views/users.php');
 
@@ -39,12 +36,12 @@ get('/admin/update',  '/views/update-admin.php');
 //Forget password
 get('/reset-password',  '/views/reset-password.php');
 get('/reset-password/success',  '/views/forget-password-success.php');
-get('/forgot-password',  '/views/login-forgot-password.php');
+get('/forgot-password',  '/views/email-forgot-password.php');
 
 //Email
 get('/email-deactivate', 'views/email-deactivate.php');
-get('/email-signup', 'views/email-signup.php');
-get('/forgot', 'views/email-forgot-password.php');
+get('/signup/success', 'views/email-signup.php');
+// get('/forgot', 'views/email-forgot-password.php');
 
 
 // ##################################################
