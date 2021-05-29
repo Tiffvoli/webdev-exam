@@ -22,6 +22,7 @@
                      <input required name="email" id="email" type="text" data-validate="email">
                      <span class="omrs-input-label">Email</span>
                  </label>
+                 <span class="error-msg email-error hide">Please enter a valid email</span>
              </div>
              <div class="omrs-input-group">
                  <label class="omrs-input-filled" for="password">

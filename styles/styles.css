@@ -254,6 +254,9 @@ div.omrs-input-group {
 }
 
 /* Input*/
+.omrs-input-filled {
+  padding: 0 !important;
+}
 .omrs-input-filled > input {
   border: 2px solid var(--blue);
   border-radius: 2rem;

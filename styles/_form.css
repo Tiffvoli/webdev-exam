@@ -46,7 +46,8 @@ input {
 }
 
 .validate_error {
-  background-color: red;
+  border: 2px solid red !important;
+  background-color: rgb(255, 0, 0, 0.5);
 }
 
 .radios {
@@ -81,4 +82,9 @@ input {
   object-position: top;
   align-self: center;
   padding: 1rem 0;
+}
+
+.error-msg {
+  padding: 0 0 0 1rem;
+  color: red;
 }

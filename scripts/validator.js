@@ -27,6 +27,7 @@ function validate() {
         const re = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (!re.test(element.value.toLowerCase())) {
           element.classList.add("validate_error");
+          document.querySelector(".email-error").classList.remove = "hide";
         }
         break;
       case "match":
