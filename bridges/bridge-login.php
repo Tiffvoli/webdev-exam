@@ -51,6 +51,7 @@ try {
         exit();
     }
 
+    //check hash password
     if (!password_verify($_POST['password'], $user['user_password'])) {
         header('Location: /');
         exit();

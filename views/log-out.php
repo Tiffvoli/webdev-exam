@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php');
-
+session_destroy();
 ?>
 <section id="deactivate-page" class="center-text">
     <h1 class="title">Logged out</h1>

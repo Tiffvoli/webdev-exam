@@ -1,6 +1,8 @@
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
+session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -28,7 +30,7 @@ try {
 
     //Recipients
     $mail->setFrom('chipperwebdev@gmail.com', 'Chipper');
-    $mail->addAddress('chipperwebdev@gmail.com', 'The user');     //Add a recipient
+    $mail->addAddress($_SESSION['user_email'],  $_SESSION['user_name']);     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -55,7 +57,7 @@ try {
 <section id="deactivate-page" class="center-text">
     <h1 class="title">Account created</h1>
     <br />
-    <p>You have succesfully signed up to Chipper. A confirmation has been to your email.</p>
+    <p>You have succesfully signed up to Chipper.<br> A confirmation has been to your email.</p>
     <a href="/" class="btn">Log in</a>
 </section>
 <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/components/bottom-footer.php'); ?>

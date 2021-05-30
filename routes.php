@@ -38,9 +38,10 @@ get('/user/update',  '/views/update.php');
 get('/admin/update',  '/views/update-admin.php');
 
 //Forget password
-get('/reset-password',  '/views/reset-password.php');
-get('/reset-password/success',  '/views/forget-password-success.php');
-get('/forgot-password',  '/views/email-forgot-password.php');
+get('/forgot-password/email', '/views/get-email.php'); //get email form
+get('/reset-password',  '/views/reset-password.php'); //reset password form
+get('/reset-password/success',  '/views/forget-password-success.php'); //success page
+get('/forgot-password',  '/views/email-forgot-password.php'); //send email with the reset password link
 
 //Email
 get('/email-deactivate', 'views/email-deactivate.php');
@@ -71,8 +72,9 @@ post('/update-password',  '/bridges/bridge-update-password.php');
 post('/update-info',  '/bridges/bridge-update-info.php');
 
 //Forget password
-post('/change-password',  '/bridges/bridge-change-password.php');
-post('/login/change-password/', '/apis/api_reset_password.php');
+post('/check-email', '/bridges/bridge-check-email.php'); //check email with database
+post('/change-password',  '/bridges/bridge-change-password.php'); //update password to database 
+// post('/login/change-password/', '/apis/api_reset_password.php');
 
 // Deactivate account
 post('/users/deactivate/$user_id', '/apis/api_deactivate_user.php');

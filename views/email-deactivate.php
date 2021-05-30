@@ -1,6 +1,8 @@
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
+session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -28,7 +30,7 @@ try {
 
     //Recipients
     $mail->setFrom('chipperwebdev@gmail.com', 'Chipper');
-    $mail->addAddress('chipperwebdev@gmail.com', 'The user');     //Add a recipient
+    $mail->addAddress('chipperwebdev@gmail.com', 'Chipper');     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -47,8 +49,8 @@ try {
     $mail->send();
     echo 'Message has been sent';
     //admin user back to users page
-    header('Location: /users');
-    exit();
+    // header('Location: /users');
+    // exit();
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

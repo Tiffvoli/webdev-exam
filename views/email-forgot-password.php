@@ -1,9 +1,13 @@
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
+session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+session_start();
 
 require_once("{$_SERVER['DOCUMENT_ROOT']}/PHPMailer/src/PHPMailer.php");
 require_once("{$_SERVER['DOCUMENT_ROOT']}/PHPMailer/src/SMTP.php");
@@ -28,7 +32,7 @@ try {
 
     //Recipients
     $mail->setFrom('chipperwebdev@gmail.com', 'Chipper');
-    $mail->addAddress('chipperwebdev@gmail.com', 'The user');     //Add a recipient
+    $mail->addAddress($_SESSION['user_email'], $_SESSION['user_name'],);     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');

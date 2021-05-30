@@ -64,6 +64,8 @@ try {
         header('Location: /signup');
         exit();
     }
+    $_SESSION['user_email'] = $_POST['user_email'];
+    $_SESSION['user_name'] = $_POST['user_name'];
     header('Location: /signup/success');
     exit();
 } catch (PDOException $ex) {

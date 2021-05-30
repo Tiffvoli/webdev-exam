@@ -1,5 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-index.php');
+session_start();
 ?>
 <section id="signup-page" class="flex">
     <div class="herobanner flex-column">
