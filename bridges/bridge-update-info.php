@@ -25,8 +25,6 @@ if (!empty($image_file)) {
     }
 }
 
-
-
 try {
     $db_path = $_SERVER['DOCUMENT_ROOT'] . '/data/users.db';
     $db = new PDO("sqlite:$db_path");
@@ -40,7 +38,8 @@ try {
         user_email = :user_email,
         user_age = :user_age,
         user_phone = :user_phone,
-        user_password = :user_password
+        user_password = :user_password,
+        user_img = :user_img
     WHERE user_uuid = :user_uuid ');
         $q->bindParam(':user_name', $_POST['update_name']);
         $q->bindParam(':user_lastname', $_POST['update_last_name']);
@@ -48,6 +47,7 @@ try {
         $q->bindParam(':user_age', $_POST['update_age']);
         $q->bindParam(':user_phone', $_POST['update_phone']);
         $q->bindParam(':user_password', $_POST['update_password']);
+        $q->bindParam(':user_img', $_SESSION['user_img']);
         $q->bindParam(':user_uuid', $_SESSION['user_uuid']);
         $q->execute();
     } else {

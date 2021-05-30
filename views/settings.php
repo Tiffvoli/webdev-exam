@@ -1,9 +1,9 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php');
 
-if (!isset($_SESSION)) {
-    session_start();
-}
+
+session_start();
+
 
 if (!isset($_SESSION['user_uuid'])) {
     header('Location: /');
@@ -32,7 +32,7 @@ try {
 
 <section id="settings-page">
     <h1 class="title">Profile Settings</h1>
-    <a href="/">
+    <a href="/user">
         <svg class="btn-back" id="ba70501b-68e7-48bf-95ab-e0c74e8b3e16" xmlns="http://www.w3.org/2000/svg" width="53.5" height="53.5" viewBox="0 0 53.5 53.5">
             <path id="Path_26" data-name="Path 26" d="M26.75,53.5A26.75,26.75,0,1,1,53.5,26.75,26.78,26.78,0,0,1,26.75,53.5Zm0-52.311A25.561,25.561,0,1,0,52.311,26.75,25.59,25.59,0,0,0,26.75,1.189Z" fill="#00539c" />
             <path id="Path_27" data-name="Path 27" d="M144.282,151.615a.592.592,0,0,1-.418-.175l-7.136-7.133a.6.6,0,0,1,0-.836l7.134-7.134a.595.595,0,1,1,.836.836l-6.713,6.713L144.7,150.6a.595.595,0,0,1-.418,1.015Z" transform="translate(-122.288 -121.893)" fill="#00539c" />
