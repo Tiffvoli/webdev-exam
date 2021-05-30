@@ -4,7 +4,11 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/router.php');
 
 // ##################################################
 // ##################################################
+//image
+post('/upload-img', '/upload.php');
 
+// Login view
+get('/home', '/index.php');
 
 // Login view
 get('/', '/views/log-in.php');

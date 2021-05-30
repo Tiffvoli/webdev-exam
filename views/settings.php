@@ -43,7 +43,7 @@ try {
         <div>
             <form method="POST" action="/update-info" onsubmit="return validate()">
                 <fieldset class="flex fieldset">
-                    <label for="name">First name<input name="update_name" id="name" type="text" value="<?= $user['user_lastname'] ?>"></label>
+                    <label for="name">First name<input name="update_name" id="name" type="text" value="<?= $user['user_name'] ?>"></label>
                     <label for="lastname">Last name<input name="update_last_name" id="lastname" type="text" value="<?= $user['user_lastname'] ?>"></label>
                 </fieldset>
                 <fieldset class="flex fieldset">

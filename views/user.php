@@ -33,7 +33,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php'); ?>
             <h1 class="title">Welcome back, <?= $user['user_name'] ?>!</h1>
             <div class="profile-wrapper">
                 <div>
-                    <img class="placeholder" src="/../img/placeholder.png">
+                    <img class="placeholder" src="/img/<?= basename($user['user_img']) ?>">
                     <h3 class="text-white"><?= $user['user_name'] ?> <?= $user['user_lastname'] ?></h3>
                     <p> <?= $user['user_email'] ?></p>
                     <p class="text-bold">Age: <span> <?= $user['user_age'] ?></span></p>

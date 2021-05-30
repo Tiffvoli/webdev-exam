@@ -69,7 +69,9 @@ input {
   padding: 0 1rem 0 0.5rem;
 }
 .placeholder {
-  width: 30%;
+  width: 8rem;
+  height: 10rem;
+  object-fit: cover;
   border-radius: 50%;
   align-self: center;
   padding: 1rem 0;
@@ -87,4 +89,9 @@ input {
 .error-msg {
   padding: 0 0 0 1rem;
   color: red;
+}
+
+#image {
+  padding: 3px 0;
+  width: 100%;
 }

@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-index.php');
     <div id="login-page" class="login flex-column">
         <h1 class="title signup-title">Sign up</h1>
 
-        <form id="form" action="/signup" method="POST" onsubmit="return validate()">
+        <form id="form" action="/signup" method="POST" onsubmit="return validate()" enctype="multipart/form-data">
 
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="name">
@@ -52,6 +52,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-index.php');
                 </label>
             </div>
 
+
+            <label class="omrs-input-filled" for="image">
+                <input required name="user_image" id="image" type="file">
+            </label>
+
+
             <button type="submit">Sign up</button>
             <div class="btn"><a class="text-blue" href="/">Log in</a></div>
         </form>
@@ -61,15 +67,3 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-index.php');
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/bottom-footer.php');
 ?>
-
-
-
-
-<!-- 
-        <label for="name">First name<input name="user_name" id="name" type="text" placeholder="Enter your first name"></label>
-        <label for="lastname">Last name<input name="user_last_name" id="lastname" type="text" placeholder="Enter your last name"></label>
-        <label for="user_email">Email<input name="user_email" id="email" type="text" placeholder="Enter your email"></label>
-        <label for="user_age">Age<input name="user_age" id="age" type="text" placeholder="Enter your age"></label>
-        <label for="user_phone">Phone<input name="user_phone" id="age" type="text" placeholder="Enter your phone"></label>
-        <label for="user_password">Password<input name="user_password" id="password" type="password" placeholder="Enter your password"></label>
-        <button type="submit">Sign up</button> -->

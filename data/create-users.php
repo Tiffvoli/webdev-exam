@@ -17,6 +17,7 @@ try {
     user_phone        TEXT,
     user_password     TEXT,
     user_stt          BOOLEAN,
+    user_img          TEXT,
     PRIMARY KEY(user_uuid)
   ) WITHOUT ROWID');
   $q->execute();
