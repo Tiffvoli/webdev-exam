@@ -39,6 +39,7 @@ $user_image_name = bin2hex(random_bytes(16)) . ".$extension";
 move_uploaded_file($_FILES['user_image']['tmp_name'], "img/$user_image_name");
 
 
+
 try {
     $db_path = $_SERVER['DOCUMENT_ROOT'] . '/data/users.db';
     $db = new PDO("sqlite:$db_path");

@@ -1,8 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION)) {
-    session_start();
-}
+
 
 if (!isset($_SESSION['admin_uuid'])) {
     header('Location: /');
@@ -41,7 +39,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php'); ?>
         <form method="POST" action="/update-password" class="hide text-left" id="update_password">
             <label for="password">New password<input name="update_password" id="password" type="password" maxlength="50" data-validate="str" data-min="2" data-max="50"></label>
             <button type="submit" class="btn">Update Password</button>
-
         </form>
         <div class="btn btn-blue"><a href="/logout">Log out</a></div>
         <script>

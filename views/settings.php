@@ -41,7 +41,8 @@ try {
     </a>
     <div class="settings-wrapper">
         <div>
-            <form method="POST" action="/update-info" onsubmit="return validate()">
+            <form method="POST" action="/update-info" onsubmit="return validate()" enctype="multipart/form-data">
+                <img class="placeholder" src="/img/<?= basename($user['user_img']) ?>">
                 <fieldset class="flex fieldset">
                     <label for="name">First name<input name="update_name" id="name" type="text" value="<?= $user['user_name'] ?>"></label>
                     <label for="lastname">Last name<input name="update_last_name" id="lastname" type="text" value="<?= $user['user_lastname'] ?>"></label>
@@ -52,7 +53,7 @@ try {
                 </fieldset>
                 <label for=" user_email">Email<input name="update_email" id="email" type="text" value="<?= $user['user_email'] ?>"></label>
                 <label for="user_password">Password<input name="update_password" id="password" type="password" value="<?= $user['user_password'] ?>"></label>
-
+                <label for="user_image">Profile Image<input name="update_image" id="image" type="file"></label>
                 <button type="submit" class="btn btn-yellow">Update Information</button>
             </form>
         </div>
