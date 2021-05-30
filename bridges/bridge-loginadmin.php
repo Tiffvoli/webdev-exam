@@ -41,11 +41,9 @@ try {
         exit();
     }
 
-    if ($_SESSION['admin_uuid'] = $user['admin_uuid']) {
-        // print json_encode($user);
-        header('Location: /admin');
-        exit();
-    }
+    $_SESSION['admin_uuid'] = $user['admin_uuid'];
+
+    header('Location: /admin');
 } catch (PDOException $ex) {
     echo $ex;
 }

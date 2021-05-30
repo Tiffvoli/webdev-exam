@@ -10,7 +10,7 @@ try {
     $q = $db->prepare(' UPDATE users 
     SET user_password = :user_password
     WHERE user_email = :user_email ');
-    $q->bindParam(':user_password', $_POST['reset_password']);
+    $q->bindParam(':user_password', password_hash($_POST['reset_password'], PASSWORD_DEFAULT));
     $q->bindParam(':user_email', $_POST['mail']);
 
     $q->execute();

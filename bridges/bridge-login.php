@@ -51,24 +51,21 @@ try {
         exit();
     }
 
-    // check password
-    // if (($_POST['password'] == $user['user_password'])) {
-    //     header('Location: /user');
-    //     exit();
-    // } else {
-    //     header('Location: /');
-    //     exit();
-    // }
+    if (!password_verify($_POST['password'], $user['user_password'])) {
+        header('Location: /');
+        exit();
+    }
 
     $_SESSION['user_uuid'] = $user['user_uuid'];
+    $_SESSION['user_name'] = $user['user_name'];
+    $_SESSION['user_lastname'] = $user['user_lastname'];
+    $_SESSION['user_age'] = $user['user_age'];
+    $_SESSION['user_phone'] = $user['user_phone'];
+    $_SESSION['user_email'] = $user['user_email'];
+    $_SESSION['user_img'] = $user['user_img'];
+    $_SESSION['user_password'] = $user['user_password'];
     header('Location: /user');
     exit();
 } catch (PDOException $ex) {
     echo $ex;
 }
-?>
-<script>
-    let console = <?= json_encode($user) ?>
-    let console1 = <?= json_encode($user['user_password']) ?>
-    console.log(console1);
-</script>

@@ -56,7 +56,7 @@ try {
     $q->bindValue(':user_email', $_POST['user_email']);
     $q->bindValue(':user_age', $_POST['user_age']);
     $q->bindValue(':user_phone', $_POST['user_phone']);
-    $q->bindValue(':user_password', $_POST['user_password']);
+    $q->bindValue(':user_password', password_hash($_POST['user_password'], PASSWORD_DEFAULT));
     $q->bindValue(':user_stt', 1);
     $q->bindValue(':user_img', $user_image_name);
     $q->execute();

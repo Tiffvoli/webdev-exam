@@ -30,14 +30,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php'); ?>
 <section id="user-page" class="flex">
     <div class="feed">
         <div class="profile center-text">
-            <h1 class="title">Welcome back, <?= $user['user_name'] ?>!</h1>
+            <h1 class="title">Welcome back, <?= $_SESSION['user_name'] ?>!</h1>
             <div class="profile-wrapper">
                 <div>
-                    <img class="placeholder" src="/img/<?= basename($user['user_img']) ?>">
-                    <h3 class="text-white"><?= $user['user_name'] ?> <?= $user['user_lastname'] ?></h3>
-                    <p> <?= $user['user_email'] ?></p>
-                    <p class="text-bold">Age: <span> <?= $user['user_age'] ?></span></p>
-                    <p class="text-bold"> Phone: <span> <?= $user['user_phone'] ?></span></p>
+                    <img class="placeholder" src="/img/<?= basename($_SESSION['user_img']) ?>">
+                    <h3 class="text-white"><?= $_SESSION['user_name'] ?> <?= $_SESSION['user_lastname'] ?></h3>
+                    <p> <?= $_SESSION['user_email'] ?></p>
+                    <p class="text-bold">Age: <span> <?= $_SESSION['user_age'] ?></span></p>
+                    <p class="text-bold"> Phone: <span> <?= $_SESSION['user_phone'] ?></span></p>
                 </div>
                 <div>
                     <div class="btn btn-yellow"><a href="/settings" class="text-blue">Settings</a></div>

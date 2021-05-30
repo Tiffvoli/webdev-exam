@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+
 $statusMsg = 'Hi';
 
 if (!isset($_SESSION['user_uuid'])) {
@@ -30,9 +32,7 @@ try {
     $db = new PDO("sqlite:$db_path");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    //if there is no file uploaded
-    if (empty($image_file)) {
-        $q = $db->prepare(' UPDATE users 
+    $q = $db->prepare(' UPDATE users 
     SET user_name = :user_name,
         user_lastname = :user_lastname,
         user_email = :user_email,
@@ -41,35 +41,25 @@ try {
         user_password = :user_password,
         user_img = :user_img
     WHERE user_uuid = :user_uuid ');
-        $q->bindParam(':user_name', $_POST['update_name']);
-        $q->bindParam(':user_lastname', $_POST['update_last_name']);
-        $q->bindParam(':user_email', $_POST['update_email']);
-        $q->bindParam(':user_age', $_POST['update_age']);
-        $q->bindParam(':user_phone', $_POST['update_phone']);
+    $q->bindParam(':user_name', $_POST['update_name']);
+    $q->bindParam(':user_lastname', $_POST['update_last_name']);
+    $q->bindParam(':user_email', $_POST['update_email']);
+    $q->bindParam(':user_age', $_POST['update_age']);
+    $q->bindParam(':user_phone', $_POST['update_phone']);
+    //if password hasn't changed
+    if ($_SESSION['user_password'] == $_POST['update_password']) {
         $q->bindParam(':user_password', $_POST['update_password']);
-        $q->bindParam(':user_img', $_SESSION['user_img']);
-        $q->bindParam(':user_uuid', $_SESSION['user_uuid']);
-        $q->execute();
-    } else {
-        $q = $db->prepare(' UPDATE users 
-        SET user_name = :user_name,
-            user_lastname = :user_lastname,
-            user_email = :user_email,
-            user_age = :user_age,
-            user_phone = :user_phone,
-            user_password = :user_password,
-            user_img = :user_img
-        WHERE user_uuid = :user_uuid ');
-        $q->bindParam(':user_name', $_POST['update_name']);
-        $q->bindParam(':user_lastname', $_POST['update_last_name']);
-        $q->bindParam(':user_email', $_POST['update_email']);
-        $q->bindParam(':user_age', $_POST['update_age']);
-        $q->bindParam(':user_phone', $_POST['update_phone']);
-        $q->bindParam(':user_password', $_POST['update_password']);
-        $q->bindParam(':user_uuid', $_SESSION['user_uuid']);
-        $q->bindParam(':user_img', $user_image_name);
-        $q->execute();
+    } else { //if password has changed and need to rehash
+        $q->bindParam(':user_password',  password_hash($_POST['update_password'], PASSWORD_DEFAULT));
     }
+    $q->bindParam(':user_uuid', $_SESSION['user_uuid']);
+    //if there is no file uploaded
+    if (empty($image_file)) {
+        $q->bindParam(':user_img',  $_SESSION['user_img']);
+    } else {   //if there is file uploaded, sometimes need to re sign in to load
+        $q->bindParam(':user_img', $user_image_name);
+    }
+    $q->execute();
     if (!$q->rowCount()) {
         header('Location: /settings');
         exit();

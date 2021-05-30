@@ -54,7 +54,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-index.php');
 
 
             <label class="omrs-input-filled" for="image">
-                <input required name="user_image" id="image" type="file">
+                <input required name="user_image" id="image-signin" type="file">
             </label>
 
 
