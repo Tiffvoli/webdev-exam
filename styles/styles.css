@@ -19,12 +19,12 @@ footer {
   padding: 5px 0;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 3rem;
   z-index: 1;
   width: 100%;
   list-style-type: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .nav-header {
   font-family: "Montserrat", sans-serif;
