@@ -23,6 +23,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
             $users = $q->fetchAll();
             foreach ($users as $user) {
                 unset($user['user_password']);
+                $_SESSION['user_name'] = $user['user_name'];
+                $_SESSION['user_mail'] = $user['user_mail']
         ?>
 
                 <div class="user flex-column">

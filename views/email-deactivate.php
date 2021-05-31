@@ -30,7 +30,7 @@ try {
 
     //Recipients
     $mail->setFrom('chipperwebdev@gmail.com', 'Chipper');
-    $mail->addAddress('chipperwebdev@gmail.com', 'Chipper');     //Add a recipient
+    $mail->addAddress($_SESSION['user_email'], $_SESSION['user_name']);     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');

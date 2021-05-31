@@ -2,10 +2,10 @@
 
 session_start();
 
-if (!$_SESSION['user_uuid']) {;
-    header('Location: /');
-    exit();
-}
+// if (!$_SESSION['user_uuid']) {;
+//     header('Location: /');
+//     exit();
+// }
 if (!isset($_POST['email'])) {
     header('Location: /');
     exit();
@@ -65,7 +65,6 @@ try {
     $_SESSION['user_email'] = $user['user_email'];
     $_SESSION['user_img'] = $user['user_img'];
     $_SESSION['user_password'] = $user['user_password'];
-
     header('Location: /user');
     exit();
 } catch (PDOException $ex) {
