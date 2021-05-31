@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php');
 ?>
 
@@ -15,7 +16,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav.php');
     <div class="reset-wrapper">
 
         <form method="POST" action="/change-password" onsubmit="return validate()">
-            <label for="email">Email<input name="mail" id="email" type="text"></label>
+            <label for="email">Email<input name="mail" id="email" type="text" value="<?= $_SESSION['user_email'] ?>"></label>
             <label for="password">Password<input name="reset_password" id="password" type="password"></label>
             <button type="submit" class="btn btn-blue">Reset Password</button>
         </form>

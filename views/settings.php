@@ -42,17 +42,17 @@ try {
     <div class="settings-wrapper">
         <div>
             <form method="POST" action="/update-info" onsubmit="return validate()" enctype="multipart/form-data">
-                <img class="placeholder" src="/img/<?= basename($_SESSION['user_img']) ?>">
+                <img class="placeholder" src="/img/<?= basename($user['user_img']) ?>">
                 <fieldset class="flex fieldset">
-                    <label for="name">First name<input name="update_name" id="name" type="text" value="<?= $_SESSION['user_name'] ?>"></label>
-                    <label for="lastname">Last name<input name="update_last_name" id="lastname" type="text" value="<?= $_SESSION['user_lastname'] ?>"></label>
+                    <label for="name">First name<input name="update_name" id="name" type="text" value="<?= $user['user_name'] ?>"></label>
+                    <label for="lastname">Last name<input name="update_last_name" id="lastname" type="text" value="<?= $user['user_lastname'] ?>"></label>
                 </fieldset>
                 <fieldset class="flex fieldset">
-                    <label for="user_age">Age<input name="update_age" id="age" type="text" value="<?= $_SESSION['user_age'] ?>"></label>
-                    <label for="user_phone">Phone<input name="update_phone" id="age" type="text" value="<?= $_SESSION['user_phone'] ?>"></label>
+                    <label for="user_age">Age<input name="update_age" id="age" type="text" value="<?= $user['user_age'] ?>"></label>
+                    <label for="user_phone">Phone<input name="update_phone" id="age" type="text" value="<?= $user['user_phone'] ?>"></label>
                 </fieldset>
-                <label for=" user_email">Email<input name="update_email" id="email" type="text" value="<?= $_SESSION['user_email'] ?>"></label>
-                <label for="user_password">Password<input name="update_password" id="password" type="password" value="<?= $_SESSION['user_password'] ?>"></label>
+                <label for=" user_email">Email<input name="update_email" id="email" type="text" value="<?= $user['user_email'] ?>"></label>
+                <label for="user_password">Password<input name="update_password" id="password" type="password" value="<?= $user['user_password'] ?>"></label>
                 <label for="user_image">Profile Image<input name="update_image" id="image" type="file"></label>
                 <button type="submit" class="btn btn-yellow">Update Information</button>
             </form>
