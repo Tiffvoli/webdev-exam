@@ -46,16 +46,16 @@ try {
         exit();
     }
     //if user is deactivated
-    // if ($user['user_stt'] == 0) {
-    //     header('Location: /');
-    //     exit();
-    // }
+    if ($user['user_stt'] == 0) {
+        header('Location: /');
+        exit();
+    }
 
     //check hash password
-    // if (!password_verify($_POST['password'], $user['user_password'])) {
-    //     header('Location: /');
-    //     exit();
-    // }
+    if (!password_verify($_POST['password'], $user['user_password'])) {
+        header('Location: /');
+        exit();
+    }
 
     $_SESSION['user_uuid'] = $user['user_uuid'];
     $_SESSION['user_name'] = $user['user_name'];

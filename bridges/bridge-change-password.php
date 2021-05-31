@@ -15,9 +15,6 @@ try {
 
     $q->execute();
 
-
-
-
     if (!$q->rowCount()) {
         header('Location: /reset-password');
         exit();

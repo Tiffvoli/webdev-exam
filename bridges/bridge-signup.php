@@ -7,7 +7,22 @@ if (!isset($_POST['user_email'])) {
     header('Location: /signup');
     exit();
 }
-
+if (!isset($_POST['user_name'])) {
+    header('Location: /signup');
+    exit();
+}
+if (!isset($_POST['user_last_name'])) {
+    header('Location: /signup');
+    exit();
+}
+if (!isset($_POST['user_age'])) {
+    header('Location: /signup');
+    exit();
+}
+if (!isset($_POST['user_phone'])) {
+    header('Location: /signup');
+    exit();
+}
 if (!isset($_POST['user_password'])) {
     header('Location: /signup');
     exit();
@@ -45,8 +60,6 @@ try {
     $db = new PDO("sqlite:$db_path");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    // $user_image = $_POST['user_image'];
-    // $image =  move_uploaded_file($_FILES['user_image']['tmp_name'], "img/$user_image");
     $q = $db->prepare(' INSERT INTO users 
                         VALUES(:user_uuid, :user_name, :user_last_name,
                         :user_email, :user_age, :user_phone, :user_password, :user_stt, :user_img)');

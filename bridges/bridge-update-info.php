@@ -3,7 +3,7 @@
 session_start();
 
 
-$statusMsg = 'Hi';
+$statusMsg = '';
 
 if (!isset($_SESSION['user_uuid'])) {
     header('Location: /settings');
