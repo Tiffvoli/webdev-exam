@@ -46,7 +46,6 @@ get('/forgot-password',  '/views/email-forgot-password.php'); //send email with 
 //Email
 get('/email-deactivate', 'views/email-deactivate.php');
 get('/signup/success', 'views/email-signup.php');
-// get('/forgot', 'views/email-forgot-password.php');
 
 
 // ##################################################

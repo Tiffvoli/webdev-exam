@@ -41,7 +41,7 @@ session_start();
 
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="phone">
-                    <input required name="user_phone" id="phone" type="text">
+                    <input required name="user_phone" id="phone" type="text" minlenght="8" maxlength="8">
                     <span class="omrs-input-label">Phone</span>
                 </label>
             </div>
