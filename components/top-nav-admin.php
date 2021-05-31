@@ -14,10 +14,10 @@
     <header>
         <nav class="nav">
             <h1><a href="/" class="nav-header">chipper.</a></h1>
-            <!-- <ul>
+            <ul>
                 <li><a href="/users">Users</a></li>
                 <li><a href="/signup">Sign up</a></li>
                 <li><a href="/">Log in</a></li>
-            </ul> -->
+            </ul>
         </nav>
     </header>

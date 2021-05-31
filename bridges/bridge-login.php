@@ -2,10 +2,10 @@
 
 session_start();
 
-if (!$_SESSION['user_uuid']) {;
-    header('Location: /');
-    exit();
-}
+// if (!$_SESSION['user_uuid']) {;
+//     header('Location: /');
+//     exit();
+// }
 if (!isset($_POST['email'])) {
     header('Location: /');
     exit();
