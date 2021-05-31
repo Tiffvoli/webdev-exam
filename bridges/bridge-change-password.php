@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+
 
 try {
     $db_path = $_SERVER['DOCUMENT_ROOT'] . '/data/users.db';
