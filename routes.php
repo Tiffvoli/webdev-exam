@@ -76,7 +76,7 @@ post('/change-password',  '/bridges/bridge-change-password.php'); //update passw
 // post('/login/change-password/', '/apis/api_reset_password.php');
 
 // Deactivate account
-post('/users/deactivate/$user_id', '/apis/api_deactivate_user.php');
+post('/users/deactivate/$user_email', '/apis/api_deactivate_user.php');
 
 // Delete account
 post('/delete',  '/views/delete.php');

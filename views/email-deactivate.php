@@ -19,7 +19,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = false;                      //Enable verbose debug output
+    $mail->SMTPDebug = 2;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -30,7 +30,7 @@ try {
 
     //Recipients
     $mail->setFrom('chipperwebdev@gmail.com', 'Chipper');
-    $mail->addAddress($_SESSION['user_email'], $_SESSION['user_name']);     //Add a recipient
+    $mail->addAddress($user_email, $user_email);     //Add a recipient
 
 
     //Content

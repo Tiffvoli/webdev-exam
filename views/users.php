@@ -24,7 +24,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
             foreach ($users as $user) {
                 unset($user['user_password']);
                 $_SESSION['user_name'] = $user['user_name'];
-                $_SESSION['user_mail'] = $user['user_mail']
+                $_SESSION['user_email'] = $user['user_email']
         ?>
 
                 <div class="user flex-column">
@@ -40,7 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
                     ?>
                     <button id="deactivate-btn" class="btn btn-yellow-outline <?php if (!$user['user_stt'] == 1) {
                                                                                     echo ' hide';
-                                                                                } ?>" onclick="deactivate_user('<?= $user['user_uuid'] ?>')">
+                                                                                } ?>" onclick="deactivate_user('<?= $user['user_email'] ?>')">
                         Deactivate account
                     </button>
 
@@ -54,9 +54,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php');
     </div>
 </section>
 <script>
-    async function deactivate_user(user_id) {
+    async function deactivate_user(user_email) {
         let div_user = event.target.parentNode
-        let conn = await fetch(`/users/deactivate/${user_id}`, {
+        let conn = await fetch(`/users/deactivate/${user_email}`, {
             "method": "POST"
         })
         if (!conn.ok) {

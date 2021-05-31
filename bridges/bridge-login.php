@@ -2,10 +2,8 @@
 
 session_start();
 
-// if (!$_SESSION['user_uuid']) {;
-//     header('Location: /');
-//     exit();
-// }
+
+
 if (!isset($_POST['email'])) {
     header('Location: /');
     exit();
@@ -40,7 +38,6 @@ try {
     $user = $q->fetch();
 
     // If user not found
-
     if (!$user) {
         header('Location: /');
         exit();
