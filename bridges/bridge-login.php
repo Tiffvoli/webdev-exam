@@ -52,10 +52,10 @@ try {
     }
 
     //check hash password
-    if (!password_verify($_POST['password'], $user['user_password'])) {
-        header('Location: /');
-        exit();
-    }
+    // if (!password_verify($_POST['password'], $user['user_password'])) {
+    //     header('Location: /');
+    //     exit();
+    // }
 
     $_SESSION['user_uuid'] = $user['user_uuid'];
     $_SESSION['user_name'] = $user['user_name'];
@@ -65,6 +65,7 @@ try {
     $_SESSION['user_email'] = $user['user_email'];
     $_SESSION['user_img'] = $user['user_img'];
     $_SESSION['user_password'] = $user['user_password'];
+
     header('Location: /user');
     exit();
 } catch (PDOException $ex) {

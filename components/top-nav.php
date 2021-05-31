@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <nav class="nav nav-user">
+        <nav class="nav">
             <h1><a href="/" class="nav-header">chipper.</a></h1>
             <!-- <ul>
                 <li><a href="/signup">Sign up</a></li>
