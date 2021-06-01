@@ -24,7 +24,7 @@ footer {
   width: 100%;
   list-style-type: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .nav-header {
   font-family: "Montserrat", sans-serif;
@@ -220,7 +220,7 @@ section#users-page .user p {
   width: 350px;
   background-color: var(--blue);
   border-radius: 5%;
-  margin: 1rem 0;
+  margin: 1rem auto;
 }
 .profile-wrapper h3 {
   padding-bottom: 1rem;

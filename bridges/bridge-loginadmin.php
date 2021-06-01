@@ -2,6 +2,7 @@
 
 session_start();
 
+//validate fields 
 if (!isset($_POST['email_admin'])) {
     header('Location: /');
     exit();

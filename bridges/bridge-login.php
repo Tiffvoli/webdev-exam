@@ -3,7 +3,7 @@
 session_start();
 
 
-
+//validate fields 
 if (!isset($_POST['email'])) {
     header('Location: /');
     exit();

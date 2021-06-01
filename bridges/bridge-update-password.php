@@ -1,5 +1,6 @@
 <?php
 
+//update password for admin
 session_start();
 
 if (!isset($_SESSION['admin_uuid'])) {

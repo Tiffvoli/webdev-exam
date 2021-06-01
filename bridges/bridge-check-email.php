@@ -2,6 +2,7 @@
 
 session_start();
 
+//validate email
 if (!filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)) {
     header('Location: /');
     exit();
@@ -24,6 +25,7 @@ try {
         exit();
     }
     //if user is deactivated
+
     if ($user['user_stt'] == 0) {
         header('Location: /');
         exit();

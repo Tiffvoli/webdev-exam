@@ -1,7 +1,6 @@
 <?php
 
 
-
 try {
     $db_path = $_SERVER['DOCUMENT_ROOT'] . '/data/users.db';
     $db = new PDO("sqlite:$db_path");

@@ -12,7 +12,7 @@ session_start();
         <form id="form" action="/check-email" method="POST" onsubmit="return validate()">
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="email">
-                    <input required name="user_email" id="email" type="text">
+                    <input required name="user_email" id="email" type="email" data-validate="email">
                     <span class="omrs-input-label">Email</span>
                 </label>
             </div>

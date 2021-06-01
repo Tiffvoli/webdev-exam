@@ -27,28 +27,27 @@ session_start();
 
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="email">
-                    <input required name="user_email" id="email" type="text">
+                    <input required name="user_email" id="email" type="text" data-validate="email">
                     <span class="omrs-input-label">Email</span>
                 </label>
             </div>
 
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="age">
-                    <input required name="user_age" id="age" type="text">
+                    <input required name="user_age" id="age" type="text" data-validate="int" data-min="15">
                     <span class="omrs-input-label">Age</span>
                 </label>
             </div>
-
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="phone">
-                    <input required name="user_phone" id="phone" type="text" minlenght="8" maxlength="8">
+                    <input required name="user_phone" id="phone" type="text" maxlength="8" minlength="8">
                     <span class="omrs-input-label">Phone</span>
                 </label>
             </div>
 
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="password">
-                    <input required name="user_password" id="password" type="password">
+                    <input required name="user_password" id="password" type="password" maxlength="50" data-validate="str" data-min="2" data-max="50">
                     <span class="omrs-input-label">Password</span>
                 </label>
             </div>

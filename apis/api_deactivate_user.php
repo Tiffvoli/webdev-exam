@@ -26,8 +26,9 @@ try {
     WHERE user_email = :user_email ');
     $q->bindValue(':user_email', $user_email);
     $q->execute();
-    //Server settings
-    $mail->SMTPDebug = 2;                      //Enable verbose debug output
+
+    //Server settings - PHPMailer section
+    $mail->SMTPDebug = false;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication

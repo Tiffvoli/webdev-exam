@@ -3,8 +3,6 @@
 session_start();
 
 
-$statusMsg = '';
-
 if (!isset($_SESSION['user_uuid'])) {
     header('Location: /settings');
     exit();
@@ -22,7 +20,7 @@ if (!empty($image_file)) {
     move_uploaded_file($_FILES['update_image']['tmp_name'], "img/$user_image_name");
     //validate file extension
     if (!in_array($extension, $valid_extensions)) {
-        echo  $statusMsg = "Please upload the correct file extension.";
+        $_SESSION['stt_msg'] = 'Please upload the correct file extension.';
         exit();
     }
 }

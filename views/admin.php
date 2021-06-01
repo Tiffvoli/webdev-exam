@@ -35,7 +35,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/components/top-nav-admin.php'); ?>
         <img src="/../img/avatar.jpg" class="placeholder-admin">
         <div class="btn btn-yellow"><a class="text-blue" href="/users">View all users</a></div>
         <button onclick="update_password()" class="btn btn-yellow">Update Password</button>
-        <form method="POST" action="/update-password" class="hide text-left" id="update_password">
+        <form method="POST" action="/update-password" class="hide text-left" id="update_password" onsubmit="return validate()">
             <label for="password">New password<input name="update_password" id="password" type="password" maxlength="50" data-validate="str" data-min="2" data-max="50"></label>
             <button type="submit" class="btn">Update Password</button>
         </form>

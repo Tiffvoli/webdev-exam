@@ -47,7 +47,7 @@ input {
 
 .validate_error {
   border: 2px solid red !important;
-  background-color: rgb(255, 0, 0, 0.5);
+  background-color: rgb(255, 0, 0, 0.1);
 }
 
 .radios {

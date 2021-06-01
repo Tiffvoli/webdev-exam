@@ -2,7 +2,8 @@
 
 session_start();
 $statusMsg = '';
-// TODO: Validate all input fields
+
+//validate fields 
 if (!isset($_POST['user_email'])) {
     header('Location: /signup');
     exit();
@@ -77,6 +78,7 @@ try {
         header('Location: /signup');
         exit();
     }
+    //set sessions for email
     $_SESSION['user_email'] = $_POST['user_email'];
     $_SESSION['user_name'] = $_POST['user_name'];
     header('Location: /signup/success');
