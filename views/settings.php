@@ -56,11 +56,11 @@ try {
                         <input name="update_age" id="age" type="text" value="<?= $user['user_age'] ?>" data-validate="int" data-min="15">
                     </label>
                     <label for="user_phone">Phone
-                        <input name="update_phone" id="age" type="text" value="<?= $user['user_phone'] ?>" maxlength="8" minlength="8">
+                        <input name="update_phone" id="age" type="text" value="<?= $user['user_phone'] ?>" pattern=[0-9]{8} maxlength="8">
                     </label>
                 </fieldset>
                 <label for=" user_email">Email
-                    <input name="update_email" id="email" type="text" value="<?= $user['user_email'] ?>" data-validate="email">
+                    <input name="update_email" id="email" type="email" value="<?= $user['user_email'] ?>" data-validate="email">
                 </label>
                 <label for="user_password">Password
                     <input name="update_password" id="password" type="password" value="<?= $user['user_password'] ?>">

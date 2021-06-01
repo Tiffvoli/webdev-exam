@@ -27,7 +27,7 @@ session_start();
 
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="email">
-                    <input required name="user_email" id="email" type="text" data-validate="email">
+                    <input required name="user_email" id="email" type="email" data-validate="email">
                     <span class="omrs-input-label">Email</span>
                 </label>
             </div>
@@ -40,7 +40,7 @@ session_start();
             </div>
             <div class="omrs-input-group">
                 <label class="omrs-input-filled" for="phone">
-                    <input required name="user_phone" id="phone" type="text" maxlength="8" minlength="8">
+                    <input required name="user_phone" id="phone" type="tel" pattern=[0-9]{8} maxlength="8">
                     <span class="omrs-input-label">Phone</span>
                 </label>
             </div>

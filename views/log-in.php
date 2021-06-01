@@ -21,7 +21,7 @@
          <form id="form" action="/login" method="POST" onsubmit="return validate()" class="user_account">
              <div class="omrs-input-group">
                  <label class="omrs-input-filled" for="email">
-                     <input required name="email" id="email" type="text" data-validate="email">
+                     <input required name="email" id="email" type="email" data-validate="email">
                      <span class="omrs-input-label">Email</span>
                  </label>
                  <span class="error-msg email-error hide">Please enter a valid email</span>
